@@ -1,0 +1,115 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.55in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+
+% Define colors
+\definecolor{primary}{RGB}{0, 51, 102}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\color{primary}}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{6pt}{2pt}
+
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+\titlespacing{\subsection}{0pt}{4pt}{0pt}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Compact list formatting
+\setlist[itemize]{leftmargin=*, topsep=1pt, itemsep=1pt, parsep=0pt}
+
+% Reduce line spacing
+\linespread{0.96}
+
+\begin{document}
+
+% ---------- HEADER ----------
+\begin{center}
+    {\LARGE\bfseries\color{primary} Harsha Madhamanchi}\\[-4pt]
+    \small
+    madhamanchi.harsha@gmail.com \quad
+    +91-7871234304 \quad
+    \textcolor{primary}{madhamanchiharsha.github.io} \\[2pt]
+    \textcolor{primary}{linkedin.com/in/harsha-madhamanchi-575869119} \quad
+    \textcolor{primary}{github.com/madhamanchiharsha} \\[2pt]
+    Bengaluru, Karnataka, India
+\end{center}
+
+% ---------- SUMMARY ----------
+\vspace{-4pt}
+\section{Summary}
+\noindent
+% <<TAILOR-START: SUMMARY>>
+Platform-minded Software Engineer (SDE3) with 7 years architecting and operating large-scale, fault-tolerant distributed systems and multi-tenant SaaS platforms on AWS. Drive Architectural Design Reviews and author design documents/ADRs with security and risk ingrained by default --- including MySQL encryption-at-rest and production database upgrades for a financial-services platform. Pioneering Gen~AI platform capabilities: built autonomous developer, tester, and reviewer agents that automate the SDLC. Own systems end-to-end across architecture, multi-region Terraform IaC, container orchestration, CI/CD, and on-call, and act as a force multiplier through cross-team design feedback and mentoring.
+% <<TAILOR-END: SUMMARY>>
+
+% ---------- SKILLS ----------
+\section{Skills}
+% <<TAILOR-START: SKILLS>>
+\noindent\textbf{Languages:} Java, Python, TypeScript \\
+\textbf{Platform \& Cloud:} AWS (ECS, EC2, VPC, Lambda, S3, SQS, RDS), container orchestration, multi-region architecture \\
+\textbf{IaC \& CI/CD:} Terraform (5 environments / multiple regions), GitHub Actions, automated delivery pipelines \\
+\textbf{Architecture \& Security:} Architectural Design Reviews (ADRs/RFCs), encryption-at-rest, distributed systems, microservices, REST APIs, system design \\
+\textbf{AI Platform:} Multi-agent systems (developer / tester / reviewer / SRE-style agents), LLaMA 3, LangChain, RAG, MCP \\
+\textbf{Frameworks:} Spring Boot, Flask, Angular, LangChain
+% <<TAILOR-END: SKILLS>>
+
+% ---------- EXPERIENCE ----------
+\section{Experience}
+
+\subsection{Software Engineer II \hfill \textit{May 2024 -- Present}}
+\textbf{FICO (Fair Isaac Corporation)} \quad \textit{-- financial-services / decisioning platform}
+% <<TAILOR-START: BULLETS>>
+\begin{itemize}
+    \item Pioneered an AI platform capability: designed autonomous developer, tester, and reviewer agents (each given a distinct persona) and composed them with an existing test-plan agent into a working prototype that automates development, testing, and sign-off --- directly advancing developer-experience and SRE-style automation.
+    \item Drive Architectural Design Reviews as a cross-team steward of engineering quality: authored ADRs for MySQL encryption-at-rest and production database upgrades, embedding security and risk into design decisions for a regulated financial-services platform.
+    \item Architected and operated high-availability microservices on AWS (ECS container platform, EC2, VPC) in Java/Spring Boot and Python, designing for fault tolerance and scale.
+    \item Built an API-driven alerting system that triggers alarms into Microsoft Teams and tags the right engineers, cutting mean-time-to-attention on production incidents.
+    \item Developed a Business Knowledge Extraction and report-summarization service using LLaMA 3 (8B) and LangChain RAG, exposed via an MCP client/server over existing microservices; automated CI/CD alerts cut release timelines by 30\%.
+\end{itemize}
+% <<TAILOR-END: BULLETS>>
+
+\subsection{Software DevOps Engineer \hfill \textit{April 2023 -- May 2024}}
+\textbf{Philips Innovation Campus} \quad \textit{-- SaaS Factory multi-tenant platform}
+\begin{itemize}
+    \item Owned AWS infrastructure (ECS, EC2, VPC) for the SaaS Factory platform across 5 environments and multiple regions, defining and maintaining it entirely as Terraform IaC.
+    \item Built one-click provisioning workflows and standardized GitHub Actions delivery pipelines, then mentored junior DevOps engineers --- elevating the team's deployment reliability.
+\end{itemize}
+
+\subsection{Senior Software Engineer \hfill \textit{March 2022 -- April 2023}}
+\textbf{Philips Innovation Campus} \quad \textit{-- SaaS Factory multi-tenant platform}
+\begin{itemize}
+    \item Led the Tenant Onboarding EPIC for the multi-tenant SaaS Factory platform (Spring Boot, AWS Lambda), reducing onboarding errors by 60\% and improving onboarding time by 40\%.
+    \item Designed event-driven integration across AWS S3, SQS, and RDS, and partnered with architects on end-to-end design sign-off.
+\end{itemize}
+
+\subsection{Software Engineer \hfill \textit{August 2019 -- March 2022}}
+\textbf{Philips Innovation Campus} \quad \textit{-- SaaS Factory multi-tenant platform}
+\begin{itemize}
+    \item Helped build the SaaS Factory platform end-to-end: Java/Spring Boot and Python/Flask backend services with an Angular front end.
+    \item Maintained Terraform for AWS deployments and built Python SDLC-automation utilities that forecast project completion probability and delivery timelines.
+\end{itemize}
+
+% ---------- PROJECTS ----------
+\section{Projects}
+\noindent\textbf{Autonomous SDLC Agents (developer / tester / reviewer)} \hfill \textit{2025}
+\begin{itemize}
+    \item Gave LLM agents distinct engineering personas and orchestrated them with a test-plan agent to smooth the develop $\rightarrow$ test $\rightarrow$ sign-off loop --- a prototype for the kind of developer/code-review/test/SRE agents that define a modern AI platform strategy.
+    \item Built as a Jira-scoped Claude Code plugin with a human-approval gate, an applier, and an auto-reviewer that runs a revision loop on Critical/High findings.
+\end{itemize}
+\noindent\textbf{LinkedIn Job-Hunt Automation (Claude Code plugin)} \hfill \textit{2025}
+\begin{itemize}
+    \item Authored a multi-agent pipeline over the LinkedIn MCP that shortlists roles with asymmetric fit-scoring and tailors a LaTeX resume per job, using schema-versioned JSON contracts and a queryable skill-gap ledger.
+\end{itemize}
+
+% ---------- EDUCATION ----------
+\section{Education}
+\noindent\textbf{Vellore Institute of Technology (VIT), India} \hfill \textit{2020}\\
+M.Tech in Integrated Software Engineering (MIS) \hfill \textit{8.85 CGPA}
+
+\end{document}

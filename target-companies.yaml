@@ -1,0 +1,116 @@
+# =====================================================================
+#  target-companies.yaml — Harsha's target companies
+# ---------------------------------------------------------------------
+#  Read by: jh-job-searcher. For each company: one search per keyword
+#  (filtered to that company), or a company-only search if keywords: [].
+#
+#  The searcher ALSO auto-searches by your resume's core skills, so you'll
+#  still discover roles at companies not listed here. Trim/extend freely.
+# =====================================================================
+
+companies:
+  # ---------- Cloud / DevTools / Infra ----------
+  - name: Datadog
+    keywords:
+      - backend engineer
+      - software engineer python
+  - name: HashiCorp
+    keywords:
+      - software engineer go
+  - name: Cloudflare
+    keywords:
+      - backend engineer
+  - name: Confluent
+    keywords:
+      - backend engineer java
+  - name: Atlassian
+    keywords:
+      - backend engineer java
+      - full stack engineer
+
+  # ---------- AI / LLM product (matches your RAG / MCP / LangChain work) ----------
+  - name: Anthropic
+    keywords:
+      - backend engineer
+      - AI engineer
+  - name: Glean
+    keywords:
+      - AI engineer
+      - backend engineer
+  - name: Hugging Face
+    keywords:
+      - machine learning engineer
+      - backend engineer
+
+  # ---------- Fintech (matches your FICO background) ----------
+  - name: Stripe
+    keywords:
+      - backend engineer
+      - distributed systems
+  - name: Razorpay
+    keywords:
+      - backend engineer java
+  - name: PhonePe
+    keywords:
+      - backend engineer
+
+  # ---------- India product / GCCs (strong Bengaluru presence) ----------
+  - name: Flipkart
+    keywords:
+      - software engineer backend
+      - full stack engineer
+  - name: Swiggy
+    keywords:
+      - backend engineer
+      - full stack engineer
+  - name: Google
+    keywords:
+      - software engineer bangalore
+      - AI engineer bangalore
+  - name: Microsoft
+    keywords:
+      - software engineer bangalore
+      - AI engineer bangalore
+
+  # ---------- European-HQ companies with engineering offices in Bangalore ----------
+  # All have real Bangalore R&D / GCC centers, so NO visa needed — search
+  # these with location "Bengaluru". Country of HQ noted for reference.
+  - name: SAP                  # Germany — SAP Labs India, large Bangalore eng center
+    keywords:
+      - backend engineer java
+      - AI engineer
+  - name: Bosch                # Germany — Bosch Global Software Technologies, Bangalore
+    keywords:
+      - software engineer
+      - cloud engineer
+  - name: Philips              # Netherlands — Philips Innovation Campus, Bangalore (your alma mater)
+    keywords:
+      - backend engineer
+      - full stack engineer
+  - name: Siemens              # Germany — Siemens / Siemens Healthineers, Bangalore
+    keywords:
+      - software engineer
+  - name: Nokia                # Finland — Nokia Bangalore R&D
+    keywords:
+      - software engineer
+  - name: Ericsson             # Sweden — Ericsson R&D Bangalore
+    keywords:
+      - backend engineer
+  - name: Adyen                # Netherlands — fintech, Bangalore tech hub (matches FICO bg)
+    keywords:
+      - backend engineer java
+  - name: Booking.com          # Netherlands — Bangalore technology center
+    keywords:
+      - backend engineer
+  - name: Schneider Electric   # France — large Bangalore engineering presence
+    keywords:
+      - software engineer
+  - name: Dassault Systemes    # France — Bangalore R&D center
+    keywords:
+      - software engineer
+  - name: Amadeus              # Spain — travel tech, Bangalore dev center
+    keywords:
+      - backend engineer
+  - name: Volvo Group          # Sweden — Volvo Group / Cars tech center, Bangalore
+    keywords:
+      - software engineer

@@ -1,0 +1,100 @@
+# =====================================================================
+#  preferences.yaml — Harsha Madhamanchi's job-search filters
+# ---------------------------------------------------------------------
+#  Read by: jh-job-searcher (filters) and jh-fit-scorer (scoring gates).
+# =====================================================================
+
+# Where you'll work. On-site/hybrid in Bengaluru + fully-remote (any geo).
+# Europe dropped — the European companies in target-companies.yaml are
+# targeted at their Bangalore offices, so no relocation/visa needed.
+locations:
+  - Remote
+  - Bengaluru
+
+# remote | hybrid | onsite | any
+# "any" because you're open to remote, hybrid, and on-site (Bengaluru).
+remote_policy: any
+
+# Target seniority. Set to Senior: the scorer only skips roles off by >=2
+# levels, so "Senior" accepts Senior (exact), Mid (off by 1), and Staff
+# (off by 1) — i.e. your wanted Mid+Senior band — while skipping Junior.
+# One of: Junior, Mid, Senior, Staff, Principal
+seniority: Senior
+
+# India roles rarely require visa sponsorship; set false. If you pursue
+# the Europe roles seriously, flip this to true so the searcher drops
+# postings that explicitly refuse sponsorship.
+visa_sponsorship_required: false
+
+# Your portfolio/personal website URL. resume-tailor fetches this on each run
+# (cached by content hash) to supplement base.tex with projects and skills
+# not in your resume. Leave empty to skip.
+portfolio_url: "https://madhamanchiharsha.github.io/"
+
+# Minimum acceptable base (annual). Your current comp is ~30 LPA, so you
+# only want roles at or above that. Expressed in INR.
+#   30 LPA = 3,000,000 INR
+salary_min: 3000000
+
+# Jobs whose TITLE or DESCRIPTION contain any of these are dropped and
+# flagged. Tune freely. Case-insensitive.
+must_avoid_keywords:
+  - Crypto
+  - Web3
+  - Clearance required
+  - Unpaid
+  # Skip UI-only roles (you want backend/AI/platform weighting):
+  - Frontend Developer
+  - Frontend Engineer
+  - UI Developer
+  # Skip non-dev-heavy roles:
+  - Support Engineer
+  - QA Engineer
+  - SDET
+  - Test Engineer
+  # Skip non-permanent roles:
+  - Internship
+  - Intern
+  - Contract
+
+# Jobs whose DESCRIPTION lacks ALL of these are dropped. Empty = disabled.
+must_have_keywords: []
+
+# --- Search fan-out controls (read by jh-job-searcher) ---
+search:
+  # past_24_hours | past_week | past_month | any
+  # past_month for a fuller first run over 27 companies; tighten to
+  # past_week for recurring runs once you're hunting actively.
+  date_posted: past_month
+  per_company_limit: 10
+  per_keyword_limit: 10
+
+# --- Discovery (read by jh-job-summarizer, Phase: discover) ---
+# Which scored decisions get a reviewable folder + summary written during
+# discovery. Discovery is READ-ONLY on LinkedIn — nothing is saved here.
+discovery:
+  decisions:
+    - recommend
+    - close-fit
+  summarize: true        # write the LLM JD summary in each job's summary.md
+
+# --- Save pacing (read by jh-linkedin-saver, single mode in review) ---
+# Random wait (whole seconds) before EACH save, so saving looks human and
+# avoids LinkedIn's burst/pattern detection. One fresh random draw per job.
+pacing:
+  min_seconds: 1
+  max_seconds: 30
+
+# --- Scoring gates (read by jh-fit-scorer) ---
+scoring:
+  recommend_min: 0.70
+  close_fit_min: 0.50
+  # Fraction of the JD's REQUIRED skills your CORE skills must cover for a
+  # job to be eligible for "recommend". Below this it's capped at close-fit.
+  required_core_match_floor: 0.5
+
+# --- Notes (not read by the plugin; for you) ---
+# European companies with strong work-culture / rating reputation worth
+# watching are seeded in target-companies.yaml. Set
+# visa_sponsorship_required: true before a serious Europe run so jobs that
+# refuse sponsorship are filtered out.
